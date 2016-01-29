@@ -1,0 +1,13 @@
+set folder=imaps://mail.example.net/INBOX
+set imap_user=username
+set imap_pass=password
+set spoolfile=+
+set record=+.sent-mail
+
+# Me
+set realname="NAME"
+set from="email@mail.com"
+
+# SMTP
+set smtp_url="smtp://yourusername@smtp.example.com:587/"
+set smtp_pass="Your1!Really2@AweSome3#Password"
