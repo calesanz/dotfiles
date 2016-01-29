@@ -9,5 +9,5 @@ set realname="NAME"
 set from="email@mail.com"
 
 # SMTP
-set smtp_url="smtp://yourusername@smtp.example.com:587/"
-set smtp_pass="Your1!Really2@AweSome3#Password"
+set smtp_url="smtp://user@smtp.example.com:587/"
+set smtp_pass="rlyCrazyPW"
