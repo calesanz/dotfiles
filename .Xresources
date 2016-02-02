@@ -1,96 +1,39 @@
-!------------------------------------------------------------------------------
-! XFT Settings
+#include "/home/avarx/.colors/avarx"
 
-Xft.dpi:                                        96
-Xft.antialias:                                  true
-Xft.rgba:                                       rgb
-Xft.hinting:                                    true
-Xft.hintstyle:                                  hintslight
+! #########################################
+urxvt*perl-lib:			/usr/lib/urxvt/perl
+urxvt*perl-ext-common:		default,matcher,clipboard
+urxvt*perl-matcher: 		1
+urxvt*matcher-button: 		3
+urxvt*url-launcher:		/usr/bin/firefox
+!URxvt*matcher.button: 1
+!URxvt*matcher.pattern.1: \\bwww\\.[\\w-]\\.[\\w./?&@#-]*[\\w/-]
+urxvt*cursorUnderline: 1
+urxvt*letterspace: -5
+!urxvt*fading: 			10
+!urxvt*fadeColor: 		#000000
+urxvt*cursorBlink:		true
+urxvt*scrollBar:		false
+urxvt*depth:			32
+urxvt*internalBorder: 		5
+urxvt*dynamicColors: on
+urxvt.urgentOnBell:  true
 
+URxvt*font:                                     xft:terminus:hinting=true:pixelsize=12:antialias=false
+URxvt*boldFont:                                 xft:terminus:style=bold:hinting=true:pixelsize=12:antialias=false
+URxvt*italicFont:                               xft:terminus:style=italic:hinting=true:pixelsize=12:antialias=false
+URxvt*boldItalicFont:                           xft:terminus:style=bolditalic:hinting=true:pixelsize=12:antialias=false
 
-URxvt.perl-ext-common:   default,matcher,vtwheel
-URxvt.url-launcher:      /usr/bin/chromium
-URxvt.matcher.button:    1
+Xft.antialias: 1
+Xft.autohint: 0
+Xft.dpi: 96
+Xft.hinting: 1
+Xft.hintstyle: hintfull
+Xft.lcdfilter: lcddefault
+Xft.rgba: rgb
 
-
-URxvt.depth: 32
-URxvt.saveLines: 12000
-
-!------------------------------------------------------------------------------
-! URXVT - Settings
-
-URxvt*geometry:                                 120x25
-URxvt*borderLess:                               false
-URxvt*scrollBar:                                false
-URxvt*inheritPixmap:                            true
-URxvt*tintColor:                                grey
-URxvt*shading:                                  40
-URxvt*cursorBlink:                              true
-URxvt*cursorUnderline:                          false
-URxvt*scrollColor:                              #151515
-URxvt*perl-ext-common:                          default,clipboard,url-select,keyboard-select,vtwheel
-URxvt*font:                                     xft:SourceCodePro-light:hinting=true:pixelsize=12:antialias=false
-URxvt*boldFont:                                 xft:SourceCodePro-bold:hinting=true:pixelsize=12:antialias=false
-URxvt*italicFont:                               xft:SourceCodePro:style=italic:hinting=true:pixelsize=12:antialias=false
-URxvt*boldItalicFont:                           xft:SourceCodePro:style=bolditalic:hinting=true:pixelsize=12:antialias=false
-URxvt.underlineURLs:                            true
-URxvt.url-select.launcher:                      /usr/bin/chromium
-URxvt.url-select.underline:                     true
-URxvt*keysym.Home: \033[1~
-URxvt*keysym.End: \033[4~
-!------------------------------------------------------------------------------
-
-! --- special colors ---
-
-*background: #0d1926
-*foreground: #d9e6f2
-
-! --- standard colors ---
-
-! black
-*color0: #000000
-
-! bright_black
-*color8: #2a2a2a
-
-! red
-*color1: #9b7855
-
-! bright_red
-*color9: #dbccbd
-
-! green
-*color2: #559b78
-
-! bright_green
-*color10: #bddbcc
-
-! yellow
-*color3: #789b55
-
-! bright_yellow
-*color11: #ccdbbd
-
-! blue
-*color4: #78559b
-
-! bright_blue
-*color12: #ccbddb
-
-! magenta
-*color5: #9b5578
-
-! bright_magenta
-*color13: #dbbdcc
-
-! cyan
-*color6: #55789b
-
-! bright_cyan
-*color14: #bdccdb
-
-! white
-*color7: #cecece
-
-! bright_white
-*color15: #ffffff
+xclock*majorColor: #9a875f
+xclock*minorColor: #9a875f
+xclock*minuteColor: #9a875f
+xclock*hourColor: #9a875f
+xclock*secondColor: #9a875f
