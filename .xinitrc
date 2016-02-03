@@ -7,6 +7,9 @@ fi
 
 xrdb -load ~/.Xresources
 
+# color profile
+/usr/bin/xcalib -d :0 /home/avarx/.color/icc/MyColorProfile.icc
+
 # keyboard layout
 setxkbmap ch
 
