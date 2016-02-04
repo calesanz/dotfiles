@@ -58,7 +58,7 @@ run_once("unclutter -root")
 -- beautiful init
 beautiful.init(os.getenv("HOME") .. "/.config/awesome/themes/avarx/theme.lua")
 -- own wallpaper
-theme.wallpaper = os.getenv("HOME") .. "/wallpapers/montana.png"
+theme.wallpaper = os.getenv("HOME") .. "/wallpapers/arch_white.jpg"
 
 -- common
 modkey     = "Mod4"
@@ -409,7 +409,7 @@ globalkeys = awful.util.table.join(
         awful.util.spawn("xbacklight -inc 15") end),
 
     -- MPD control
-    awful.key({ altkey, "Control" }, "Up",
+    awful.key({}, "XF86AudioPlay",
         function ()
             awful.util.spawn_with_shell("mpc toggle || ncmpc toggle || pms toggle")
             mpdwidget.update()
@@ -419,12 +419,12 @@ globalkeys = awful.util.table.join(
             awful.util.spawn_with_shell("mpc stop || ncmpc stop || pms stop")
             mpdwidget.update()
         end),
-    awful.key({ altkey, "Control" }, "Left",
+    awful.key({}, "XF86AudioPrev",
         function ()
             awful.util.spawn_with_shell("mpc prev || ncmpc prev || pms prev")
             mpdwidget.update()
         end),
-    awful.key({ altkey, "Control" }, "Right",
+    awful.key({}, "XF86AudioNext",
         function ()
             awful.util.spawn_with_shell("mpc next || ncmpc next || pms next")
             mpdwidget.update()
