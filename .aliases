@@ -36,4 +36,4 @@ alias top='htop'
 # xrandr
 
 alias xr='xrandr'
-alias xr-office='xrandr --output HDMI1 --auto'
+alias xr-home='xrandr --output DP1 --auto'
