@@ -58,7 +58,7 @@ run_once("unclutter -root")
 -- beautiful init
 beautiful.init(os.getenv("HOME") .. "/.config/awesome/themes/avarx/theme.lua")
 -- own wallpaper
-theme.wallpaper = os.getenv("HOME") .. "/wallpapers/arch_white.jpg"
+theme.wallpaper = os.getenv("HOME") .. "/wallpapers/fog.jpg"
 
 -- common
 modkey     = "Mod4"
@@ -94,7 +94,7 @@ end
 -- {{{ Wallpaper
 if beautiful.wallpaper then
     for s = 1, screen.count() do
-        gears.wallpaper.maximized(beautiful.wallpaper, s, true)
+        gears.wallpaper.centered(beautiful.wallpaper, s, "#000000")
     end
 end
 -- }}}
@@ -117,7 +117,7 @@ mytextclock = lain.widgets.abase({
 
         for i=1,3 do t_output = t_output .. " " .. o_it(i) end
 
-        widget:set_markup(markup("#b11640", o_it(1)) .. " ")
+        widget:set_markup(markup("#82a37c", o_it(1)) .. " ")
     end
 })
 
@@ -132,7 +132,7 @@ batwidget = lain.widgets.bat({
         else
             perc = bat_now.perc .. "% "
         end
-        widget:set_markup(markup("#b11640", perc))
+        widget:set_markup(markup("#82a37c", perc))
     end
 })
 
@@ -143,7 +143,7 @@ volumewidget = lain.widgets.alsa({
             volume_now.level = volume_now.level .. "M"
         end
 
-        widget:set_markup(markup("#b11640", volume_now.level .. "% "))
+        widget:set_markup(markup("#82a37c", volume_now.level .. "% "))
     end
 })
 
@@ -168,7 +168,7 @@ mpdwidget = lain.widgets.mpd({
             title  = ""
             mpdicon:set_image(nil)
         end
-        widget:set_markup(markup("#b11640", artist) .. markup("#b11640", title))
+        widget:set_markup(markup("#82a37c", artist) .. markup("#82a37c", title))
     end
 })
 
