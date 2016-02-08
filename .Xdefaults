@@ -35,8 +35,6 @@ URxvt.url-select.launcher:                      /usr/bin/chromium
 URxvt.url-select.underline:                     true
 URxvt*keysym.Home: \033[1~
 URxvt*keysym.End: \033[4~
-URxvt*shading:    20
-URxvt*transparent:true
 !------------------------------------------------------------------------------
 ! URxvt Colors
 
