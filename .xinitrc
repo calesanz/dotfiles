@@ -7,6 +7,9 @@ fi
 
 xrdb -load ~/.Xresources
 
+# screensaver
+xscreensaver -nosplash &
+
 # color profile
 /usr/bin/xcalib -d :0 /home/avarx/.colors/icc/MyColorProfile.icc
 
