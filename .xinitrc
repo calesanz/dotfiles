@@ -8,10 +8,18 @@ fi
 xrdb -load ~/.Xresources
 
 # color profile
-/usr/bin/xcalib -d :0 /home/avarx/.color/icc/MyColorProfile.icc
+/usr/bin/xcalib -d :0 /home/avarx/.colors/icc/MyColorProfile.icc
+
+# mpd
+mpd
 
 # keyboard layout
 setxkbmap ch
+
+# keyboard remapping
+if [ -s ~/.Xmodmap ]; then
+    xmodmap ~/.Xmodmap
+fi
 
 # wm
 exec awesome
