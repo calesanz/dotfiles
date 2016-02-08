@@ -1,0 +1,45 @@
+# Various client settings
+set query_command="lbdbq %s"
+set copy
+set beep_new
+set ascii_chars=yes
+set reverse_name
+set move=no
+unset mark_old
+set forward_quote
+set include
+set fast_reply="yes"
+set indent_str="> "
+# Cache email headers and store them in .muttheaders/
+set header_cache="~/.muttheaders/"
+
+# HTML
+auto_view text/html
+alternative_order text/enriched text/plain text text/html
+
+# local settings
+source ~/.muttrc.local
+
+# Color settings
+source ~/.mutt/colors
+
+# My list of mailboxes
+source ~/.mutt/mailboxes
+
+#mailing lists
+#subscribe talk@nblug.org
+#subscribe announce@nblug.org
+
+
+###################################
+# Random and Weird Settings       #
+###################################
+
+# Editor Settings
+# Use vim as the default editor with some special options for mutt
+# such as spell check and 75 characters to a line
+set editor="nano"
+# Show 7 lines of other email from a mailbox when reading
+# a specific email. Makes it easier to see where you are
+# in your mailbox when reading a message
+set pager_index_lines=7
