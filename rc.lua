@@ -1,4 +1,4 @@
-﻿--[[
+--[[
 
      avarx Awesome WM config 2.0
      thanks to:
@@ -47,6 +47,9 @@ function run_once(cmd)
      findme = cmd:sub(0, firstspace-1)
   end
   awful.util.spawn_with_shell("pgrep -u $USER -x " .. findme .. " > /dev/null || (" .. cmd .. ")")
+  -- Locking
+  -- awful.util.spawn_with_shell('~/.config/awesome/locker.sh')
+
 end
 
 run_once("urxvtd")
@@ -69,8 +72,8 @@ editor_cmd = terminal .. " -e " .. editor
 
 -- user defined
 browser    = "chromium"
-browser2   = "iron"
-gui_editor = "gvim"
+browser2   = "google-chrome-unstable"
+gui_editor = "subl"
 graphics   = "gimp"
 mail       = terminal .. " -e mutt "
 
@@ -82,8 +85,8 @@ local layouts = {
 
 -- {{{ Tags
 tags = {
-   names = { "web", "term", "dev", "dev", "media", "files" },
-   layout = { layouts[1], layouts[2], layouts[2], layouts[2], layouts[2], layouts[2] }
+   names = { "web", "term", "dev", "dev", "media", "files", "vm" },
+   layout = { layouts[1], layouts[2], layouts[2], layouts[2], layouts[2], layouts[2], layouts[1] }
 }
 for s = 1, screen.count() do
 -- Each screen has its own tag table.
@@ -140,10 +143,10 @@ batwidget = lain.widgets.bat({
 volumewidget = lain.widgets.alsa({
     settings = function()
         if volume_now.status == "off" then
-            volume_now.level = volume_now.level .. "M"
+            volume_now.level = " " .. volume_now.level .. "M"
         end
 
-        widget:set_markup(markup("#82a37c", volume_now.level .. "% "))
+        widget:set_markup(markup("#82a37c", "  " .. volume_now.level .. "% "))
     end
 })
 
@@ -282,6 +285,7 @@ for s = 1, screen.count() do
 
     -- Widgets that are aligned to the bottom right
     bottom_right_layout = wibox.layout.fixed.horizontal()
+    bottom_right_layout = wibox.layout.fixed.horizontal()
     bottom_right_layout:add(mylayoutbox[s])
 
     -- Now bring it all together (with the tasklist in the middle)
@@ -311,9 +315,6 @@ globalkeys = awful.util.table.join(
     awful.key({ modkey }, "Left",   awful.tag.viewprev       ),
     awful.key({ modkey }, "Right",  awful.tag.viewnext       ),
     awful.key({ modkey }, "Escape", awful.tag.history.restore),
-
-    -- screensaver and lock
-    awful.key({ modkey, "Control" }, "l", function () awful.util.spawn("xscreensaver-command -lock") end),
 
     -- Default client focus
     awful.key({ altkey }, "k",
@@ -362,7 +363,7 @@ globalkeys = awful.util.table.join(
     end),
 
     -- Layout manipulation
-    awful.key({ modkey,           }, "Tab",
+    awful.key({ "Control",           }, "Tab",
         function ()
             awful.client.focus.history.previous()
             if client.focus then
@@ -375,7 +376,7 @@ globalkeys = awful.util.table.join(
     awful.key({ modkey, "Shift"   }, "space",  function () awful.layout.inc(layouts, -1)  end),
 
     -- Standard program
-    awful.key({ modkey,           }, "Return", function () awful.util.spawn(terminal) end),
+    awful.key({ "Control",           }, "Return", function () awful.util.spawn(terminal) end),
     awful.key({ modkey, "Control" }, "r",      awesome.restart),
     awful.key({ modkey, "Shift"   }, "q",      awesome.quit),
 
@@ -443,19 +444,26 @@ globalkeys = awful.util.table.join(
     awful.key({ modkey }, "g", function () awful.util.spawn(graphics) end),
 
     -- Prompt
-    awful.key({ modkey }, "r", function () mypromptbox[mouse.screen]:run() end),
+    awful.key({ "Control" }, "r", function () mypromptbox[mouse.screen]:run() end),
     awful.key({ modkey }, "x",
               function ()
                   awful.prompt.run({ prompt = "Run Lua code: " },
                   mypromptbox[mouse.screen].widget,
                   awful.util.eval, nil,
                   awful.util.getdir("cache") .. "/history_eval")
+              end),
+    -- Lock
+    awful.key({ modkey, "Control" }, "l",
+              function ()
+                  awful.util.spawn("sync")
+                  awful.util.spawn("/home/avarx/.config/awesome/locker.sh")
               end)
 )
 
+
 clientkeys = awful.util.table.join(
     awful.key({ modkey,           }, "f",      function (c) c.fullscreen = not c.fullscreen  end),
-    awful.key({ modkey, "Shift"   }, "c",      function (c) c:kill()                         end),
+    awful.key({ "Control", "Shift"}, "c",      function (c) c:kill()                         end),
     awful.key({ modkey, "Control" }, "space",  awful.client.floating.toggle                     ),
     awful.key({ modkey, "Control" }, "Return", function (c) c:swap(awful.client.getmaster()) end),
     awful.key({ modkey,           }, "o",      awful.client.movetoscreen                        ),
@@ -479,7 +487,7 @@ clientkeys = awful.util.table.join(
 for i = 1, 9 do
     globalkeys = awful.util.table.join(globalkeys,
         -- View tag only.
-        awful.key({ modkey }, "#" .. i + 9,
+        awful.key({ "Control" }, "#" .. i + 9,
                   function ()
                         local screen = mouse.screen
                         local tag = awful.tag.gettags(screen)[i]
@@ -546,7 +554,7 @@ awful.rules.rules = {
     { rule = { class = "Dwb" },
           properties = { tag = tags[1][1] } },
 
-    { rule = { class = "Iron" },
+    { rule = { class = "google-chrome-unstable" },
           properties = { tag = tags[1][1] } },
 
     { rule = { instance = "plugin-container" },
