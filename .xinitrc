@@ -7,11 +7,11 @@ fi
 
 xrdb -load ~/.Xresources
 
-# screensaver
-xscreensaver -nosplash &
-
 # color profile
 /usr/bin/xcalib -d :0 /home/avarx/.colors/icc/MyColorProfile.icc
+
+# screen lock
+xautolock -time 10 -locker "/home/avarx/.config/awesome/locker.sh" &
 
 # mpd
 mpd
