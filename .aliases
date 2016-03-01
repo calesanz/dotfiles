@@ -33,7 +33,16 @@ alias ..='cd ..'
 alias sl='ls'
 alias top='htop'
 
+#backup
+alias backuptostick='sudo rsync -avxHAX --progress --exclude 't37LTS' Projects /mnt/stick'
+
+#sublime
+alias subl='subl3'
+
+#cd
+alias gotohl='cd ~/Projects/Hacking/HL'
+
 # xrandr
 
 alias xr='xrandr'
-alias xr-home='xrandr --output DP1 --auto'
+alias xr-home='xrandr --output DP1 --right-of eDP1 --auto'
