@@ -1,4 +1,4 @@
-#include "/home/avarx/.colors/avarx_grn"
+#include "/home/avarx/.colors/avarx_red"
 
 ! #########################################
 urxvt*perl-lib:			/usr/lib/urxvt/perl

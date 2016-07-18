@@ -7,6 +7,8 @@ export ZSH=$HOME/.omzsh
 # time that oh-my-zsh is loaded.
 ZSH_THEME="robbyrussell"
 
+plugins=(archlinux colored-man-pages extract git nmap rsync sublime)
+
 autoload -U compinit promptinit colors
 compinit
 promptinit
