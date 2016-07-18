@@ -61,7 +61,7 @@ run_once("unclutter -root")
 -- beautiful init
 beautiful.init(os.getenv("HOME") .. "/.config/awesome/themes/avarx/theme.lua")
 -- own wallpaper
-theme.wallpaper = os.getenv("HOME") .. "/wallpapers/fog.jpg"
+theme.wallpaper = os.getenv("HOME") .. "/wallpapers/skull.jpg"
 
 -- common
 modkey     = "Mod4"
@@ -85,8 +85,8 @@ local layouts = {
 
 -- {{{ Tags
 tags = {
-   names = { "web", "term", "dev", "dev", "media", "files", "vm" },
-   layout = { layouts[1], layouts[2], layouts[2], layouts[2], layouts[2], layouts[2], layouts[1] }
+   names = { "web", "term", "dev", "mail", "media", "files", "vm" },
+   layout = { layouts[1], layouts[2], layouts[1], layouts[1], layouts[2], layouts[2], layouts[1] }
 }
 for s = 1, screen.count() do
 -- Each screen has its own tag table.
@@ -110,6 +110,14 @@ mymainmenu = awful.menu.new({ items = require("menugen").build_menu(),
 -- {{{ Wibox
 markup      = lain.util.markup
 
+-- IRC
+--require("widget.irc")
+--    irc = widget.irc({ }, {
+--        text         = "<span font_desc='Dejavu Sans 11'>IRC</span>",
+--        highlights   = { "avarx", "avarx_", "security" },
+--        clientname   = "weechat-curses",
+--    })
+
 -- Textclock
 mytextclock = lain.widgets.abase({
     timeout  = 60,
@@ -120,7 +128,7 @@ mytextclock = lain.widgets.abase({
 
         for i=1,3 do t_output = t_output .. " " .. o_it(i) end
 
-        widget:set_markup(markup("#82a37c", o_it(1)) .. " ")
+        widget:set_markup(markup("#aaaaaa", o_it(1)) .. " ")
     end
 })
 
@@ -135,7 +143,7 @@ batwidget = lain.widgets.bat({
         else
             perc = bat_now.perc .. "% "
         end
-        widget:set_markup(markup("#82a37c", perc))
+        widget:set_markup(markup("#aaaaaa", perc))
     end
 })
 
@@ -146,7 +154,7 @@ volumewidget = lain.widgets.alsa({
             volume_now.level = " " .. volume_now.level .. "M"
         end
 
-        widget:set_markup(markup("#82a37c", "  " .. volume_now.level .. "% "))
+        widget:set_markup(markup("#aaaaaa", "  " .. volume_now.level .. "% "))
     end
 })
 
@@ -171,7 +179,7 @@ mpdwidget = lain.widgets.mpd({
             title  = ""
             mpdicon:set_image(nil)
         end
-        widget:set_markup(markup("#82a37c", artist) .. markup("#82a37c", title))
+        widget:set_markup(markup("#b11640", artist) .. markup("#b11640", title))
     end
 })
 
@@ -277,7 +285,7 @@ for s = 1, screen.count() do
     mywibox[s]:set_widget(layout)
 
     -- Create the bottom wibox
-    mybottomwibox[s] = awful.wibox({ position = "bottom", screen = s, border_width = 0, height = 20 })
+    mybottomwibox[s] = awful.wibox({ position = "bottom", screen = s, border_width = 0, height = 10 })
     --mybottomwibox[s].visible = false
 
     -- Widgets that are aligned to the bottom left
@@ -391,12 +399,12 @@ globalkeys = awful.util.table.join(
     -- ALSA volume control
     awful.key({}, "XF86AudioRaiseVolume",
         function ()
-            os.execute(string.format("amixer set %s 1%%+", volumewidget.channel))
+            os.execute(string.format("amixer set %s 5%%+", volumewidget.channel))
             volumewidget.update()
         end),
     awful.key({}, "XF86AudioLowerVolume",
         function ()
-            os.execute(string.format("amixer set %s 1%%-", volumewidget.channel))
+            os.execute(string.format("amixer set %s 5%%-", volumewidget.channel))
             volumewidget.update()
         end),
     awful.key({}, "XF86AudioMute",
@@ -445,7 +453,7 @@ globalkeys = awful.util.table.join(
 
     -- Prompt
     awful.key({ "Control" }, "r", function () mypromptbox[mouse.screen]:run() end),
-    awful.key({ modkey }, "x",
+    awful.key({ modkey }, "<",
               function ()
                   awful.prompt.run({ prompt = "Run Lua code: " },
                   mypromptbox[mouse.screen].widget,
