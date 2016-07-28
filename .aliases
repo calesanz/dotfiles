@@ -46,15 +46,21 @@ alias subl='subl3'
 
 #cd
 alias gotohl='cd ~/Projects/Hacking/HL'
+#web
+alias webroot='cd /srv/http'
+alias frp='cd /home/avarx/Projects/Web/frappant'
+alias t3='cd /home/avarx/Projects/Web/TYPO3'
+alias startwebserver='systemctl start httpd.service'
+alias stopwebserver='systemctl stop httpd.service'
 
 # xrandr
 alias xr='xrandr'
+alias xr-mobile='xrandr -s 0'
 alias xr-home='xrandr --output DP1 --right-of eDP1 --auto'
+alias xr-office='xrandr --output HDMI1 --right-of eDP1 --auto'
+alias xr-beamer='xrandr --output HDMI1 --left-of eDP1 --auto'
 
-#web
-alias webroot='cd /srv/http'
-alias startwebserver='systemctl start httpd.service'
-alias stopwebserver='systemctl stop httpd.service'
+
 
 ################
 #WINE

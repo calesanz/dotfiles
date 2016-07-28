@@ -14,8 +14,14 @@ awful.rules     = require("awful.rules")
 local wibox     = require("wibox")
 local beautiful = require("beautiful")
 local naughty   = require("naughty")
+local drop      = require("scratchdrop")
 local lain      = require("lain")
 -- }}}
+
+
+-- Localization
+
+os.setlocale("de_CH.UTF-8")
 
 -- {{{ Error handling
 if awesome.startup_errors then
@@ -60,7 +66,7 @@ run_once("unclutter -root")
 -- beautiful init
 beautiful.init(os.getenv("HOME") .. "/.config/awesome/themes/avarx/theme.lua")
 -- own wallpaper
-theme.wallpaper = os.getenv("HOME") .. "/wallpapers/skull.jpg"
+theme.wallpaper = os.getenv("HOME") .. "/wallpapers/pattern_black.png"
 
 -- common
 modkey     = "Mod4"
@@ -178,7 +184,7 @@ mpdwidget = lain.widgets.mpd({
             title  = ""
             mpdicon:set_image(nil)
         end
-        widget:set_markup(markup("#b11640", artist) .. markup("#b11640", title))
+        widget:set_markup(markup("#51C4D4", artist) .. markup("#51C4D4", title))
     end
 })
 
@@ -284,7 +290,7 @@ for s = 1, screen.count() do
     mywibox[s]:set_widget(layout)
 
     -- Create the bottom wibox
-    mybottomwibox[s] = awful.wibox({ position = "bottom", screen = s, border_width = 0, height = 10 })
+    mybottomwibox[s] = awful.wibox({ position = "bottom", screen = s, border_width = 0, height = 20 })
     --mybottomwibox[s].visible = false
 
     -- Widgets that are aligned to the bottom left

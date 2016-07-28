@@ -3,8 +3,9 @@
 
      avarx Awesome WM config 2.0
      github.com/avarx
-     #red:82a37c
+     #red:51C4D4
      #green:82a37c
+     #blue:51C4D4
 
 --]]
 
@@ -22,26 +23,26 @@ theme.bg_normal                     = "#000000"
 theme.bg_focus                      = "#000000"
 theme.bg_urgent                     = "#000000"
 theme.fg_normal                     = "#aaaaaa"
-theme.fg_focus                      = "#82a37c"
-theme.fg_urgent                     = "#82a37c"
+theme.fg_focus                      = "#51C4D4"
+theme.fg_urgent                     = "#51C4D4"
 theme.fg_minimize                   = "#ffffff"
 theme.fg_black                      = "#424242"
-theme.fg_red                        = "#82a37c"
-theme.fg_green                      = "#82a37c"
-theme.fg_yellow                     = "#82a37c"
-theme.fg_blue                       = "#82a37c"
-theme.fg_magenta                    = "#82a37c"
-theme.fg_cyan                       = "#82a37c"
+theme.fg_red                        = "#51C4D4"
+theme.fg_green                      = "#51C4D4"
+theme.fg_yellow                     = "#51C4D4"
+theme.fg_blue                       = "#51C4D4"
+theme.fg_magenta                    = "#51C4D4"
+theme.fg_cyan                       = "#51C4D4"
 theme.fg_white                      = "#aaaaaa"
-theme.fg_blu                        = "#82a37c"
+theme.fg_blu                        = "#51C4D4"
 theme.border_width                  = "1"
 theme.border_normal                 = "#1c2022"
-theme.border_focus                  = "#82a37c"
-theme.border_marked                 = "#82a37c"
+theme.border_focus                  = "#51C4D4"
+theme.border_marked                 = "#51C4D4"
 theme.menu_width                    = "110"
 theme.menu_border_width             = "0"
 theme.menu_fg_normal                = "#aaaaaa"
-theme.menu_fg_focus                 = "#82a37c"
+theme.menu_fg_focus                 = "#51C4D4"
 theme.menu_bg_normal                = "#050505dd"
 theme.menu_bg_focus                 = "#050505dd"
 

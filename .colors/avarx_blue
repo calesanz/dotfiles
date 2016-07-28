@@ -1,0 +1,20 @@
+urxvt*background:       [80]#2c2832
+urxvt*foreground:       #f9f9f9
+URxvt*tintColor:        #ffffff
+
+*color0:  #2c2832
+*color8:  #dbd7b8
+*color1:  #51C4D4
+*color9:  #dbd7b8
+*color2:  #51C4D4
+*color10: #dbd7b8
+*color3:  #51C4D4
+*color11: #dbd7b8
+*color4:  #dbd7b8
+*color12: #51C4D4
+*color5:  #dbd7b8
+*color13: #51C4D4
+*color6:  #dbd7b8
+*color14: #51C4D4
+*color7:  #dbd7b8
+*color15: #51C4D4
