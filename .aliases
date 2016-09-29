@@ -9,10 +9,9 @@ alias igrep='grep -i --color=auto'
 alias grp='grep'
 alias diff='colordiff'
 alias cl='tr -s " " | cut -d " " -f $1'
-alias ll='ls -alh'
+alias ll='ls -altrh'
 alias ltr='ls -lhatr'
 alias src='source'
-alias db='dropbox'
 alias .='source'
 alias la='ls -lA'
 alias l='ls -l'
@@ -34,9 +33,6 @@ alias sl='ls'
 alias top='htop'
 alias genpasswd="strings /dev/urandom | grep -o '[[:alnum:]]' | head -n 30 | tr -d '\n'; echo" 
 
-#backup
-alias backuptostick='sudo rsync -avxHAX --progress --exclude 't37LTS' Projects /mnt/stick'
-alias backupfromstick='sudo rsync -avxHAX --progress --exclude 't37LTS' /mnt/stick/Projects /home/avarx/Projects '
 
 #lock
 alias lock='~/.config/awesome/locker.sh'
@@ -44,12 +40,7 @@ alias lock='~/.config/awesome/locker.sh'
 #sublime
 alias subl='subl3'
 
-#cd
-alias gotohl='cd ~/Projects/Hacking/HL'
 #web
-alias webroot='cd /srv/http'
-alias frp='cd /home/avarx/Projects/Web/frappant'
-alias t3='cd /home/avarx/Projects/Web/TYPO3'
 alias startwebserver='systemctl start httpd.service'
 alias stopwebserver='systemctl stop httpd.service'
 
@@ -64,10 +55,6 @@ alias xr-beamer='xrandr --output HDMI1 --left-of eDP1 --auto'
 
 ################
 #WINE
-
-#RE
-alias IDA='wine /home/avarx/.wine/drive_c/Program\ Files\ \(x86\)/IDA\ 6.8/idaq.exe'
-alias IDA64='wine /home/avarx/.wine/drive_c/Program\ Files\ \(x86\)/IDA\ 6.8/idaq64.exe'
 
 
 #functions
