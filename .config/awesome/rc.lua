@@ -75,7 +75,7 @@ editor     = os.getenv("EDITOR") or "nano" or "vi"
 editor_cmd = terminal .. " -e " .. editor
 
 -- user defined
-browser    = "chromium"
+browser    = "firefox"
 browser2   = "google-chrome-unstable"
 gui_editor = "subl"
 graphics   = "gimp"
@@ -101,7 +101,7 @@ end
 -- {{{ Wallpaper
 if beautiful.wallpaper then
     for s = 1, screen.count() do
-        gears.wallpaper.centered(beautiful.wallpaper, s, "#000000")
+        gears.wallpaper.fit(beautiful.wallpaper, s, "#000000")
     end
 end
 -- }}}
@@ -465,7 +465,7 @@ globalkeys = awful.util.table.join(
     awful.key({ modkey, "Control" }, "l",
               function ()
                   awful.util.spawn("sync")
-                  awful.util.spawn("/home/avarx/.config/awesome/locker.sh")
+                  awful.util.spawn("/home/dev/.config/awesome/locker.sh")
               end)
 )
 

@@ -1,4 +1,4 @@
-#include "/home/avarx/.colors/avarx_blue"
+#include "/home/dev/.colors/avarx_blue"
 
 ! #########################################
 urxvt*perl-lib:			/usr/lib/urxvt/perl
@@ -19,10 +19,10 @@ urxvt*internalBorder: 		5
 urxvt*dynamicColors: on
 urxvt.urgentOnBell:  true
 
-URxvt*font:                                     xft:terminus:hinting=true:pixelsize=12:antialias=false
-URxvt*boldFont:                                 xft:terminus:style=bold:hinting=true:pixelsize=12:antialias=false
-URxvt*italicFont:                               xft:terminus:style=italic:hinting=true:pixelsize=12:antialias=false
-URxvt*boldItalicFont:                           xft:terminus:style=bolditalic:hinting=true:pixelsize=12:antialias=false
+URxvt*font:                                     xft:Terminus:hinting=true:pixelsize=12:antialias=false
+URxvt*boldFont:                                 xft:Terminus:style=bold:hinting=true:pixelsize=12:antialias=false
+URxvt*italicFont:                               xft:Terminus:style=italic:hinting=true:pixelsize=12:antialias=false
+URxvt*boldItalicFont:                           xft:Terminus:style=bolditalic:hinting=true:pixelsize=12:antialias=false
 
 Xft.antialias: 1
 Xft.autohint: 0

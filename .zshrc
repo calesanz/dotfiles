@@ -17,6 +17,7 @@ PROMPT="
 %{$fg[red]%} »  %{$reset_color%}"
 RPROMPT="%B%{$fg[black]%}%~%{$reset_color%}"
 EDITOR=vim
+VISUAL=vim
 export PATH=$HOME/bin:/usr/local/bin:$PATH
 
 source $ZSH/oh-my-zsh.sh
