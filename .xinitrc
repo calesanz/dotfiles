@@ -17,7 +17,7 @@ xautolock -time 10 -locker "~/.config/awesome/locker.sh" &
 mpd
 
 # keyboard layout
-setxkbmap de_CH-latin
+setxkbmap -layout ch
 
 # keyboard remapping
 if [ -s ~/.Xmodmap ]; then

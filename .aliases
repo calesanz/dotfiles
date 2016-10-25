@@ -33,6 +33,8 @@ alias sl='ls'
 alias top='htop'
 alias genpasswd="strings /dev/urandom | grep -o '[[:alnum:]]' | head -n 30 | tr -d '\n'; echo" 
 alias cd..='cd ..'
+alias lls='ll'
+alias cls='clear'
 
 #lock
 alias lock='~/.config/awesome/locker.sh'
