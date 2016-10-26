@@ -90,7 +90,7 @@ local layouts = {
 -- {{{ Tags
 tags = {
    names = { "web", "term", "dev", "mail", "media", "files", "vm" },
-   layout = { layouts[1], layouts[2], layouts[1], layouts[1], layouts[2], layouts[2], layouts[1] }
+   layout = { layouts[1], layouts[2], layouts[1], layouts[2], layouts[2], layouts[2], layouts[1] }
 }
 for s = 1, screen.count() do
 -- Each screen has its own tag table.
@@ -563,7 +563,7 @@ awful.rules.rules = {
     { rule = { class = "Dwb" },
           properties = { tag = tags[1][1] } },
 
-    { rule = { class = "google-chrome-unstable" },
+    { rule = { class = "firefox" },
           properties = { tag = tags[1][1] } },
 
     { rule = { instance = "plugin-container" },
